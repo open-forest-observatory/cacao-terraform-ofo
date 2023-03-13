@@ -1,0 +1,30 @@
+---
+
+- name: GET_URL ; download Anaconda3
+  become: true
+  get_url:
+    url: https://repo.anaconda.com/archive/{{ ANACONDA3_VERSION }}.sh
+    dest: /tmp/{{ ANACONDA3_VERSION }}.sh
+    mode: 775
+
+- name: SHELL ; run anaconda3 installer
+  shell:
+    cmd: /tmp/{{ ANACONDA3_VERSION }}.sh -b
+  args:
+    creates: ~/anaconda3
+
+- name: SHELL ; run conda init
+  shell:
+    cmd: ~/anaconda3/bin/conda init
+  args:
+    executable: /bin/bash
+
+- name: SHELL ; run conda activate and install nb_conda_kernels
+  shell:
+    cmd: ~/anaconda3/bin/conda install -n base nb_conda_kernels --yes
+  args:
+    executable: /bin/bash
+
+- name: SHELL ; run conda create --name meta200 python=3.8 PyYaml ipykernel
+  shell:
+    cmd: ~/anaconda3/bin/conda create --name meta200 python=3.8 PyYaml ipykernel --yes

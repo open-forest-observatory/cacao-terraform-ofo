@@ -1,0 +1,8 @@
+---
+
+- name: APT ; install jupyter-notebook
+  become: true
+  apt:
+    pkg:
+      - jupyter-notebook
+    state: present

@@ -1,0 +1,26 @@
+---
+# https://docs.ansible.com/ansible/latest/collections/community/general/flatpak_module.html
+- name: APT ; install flatpak and gnome-software-plugin-flatpak
+  become: true
+  apt:
+    pkg:
+      - flatpak
+      - gnome-software-plugin-flatpak
+    state: present
+    update_cache: yes
+
+- name: FLATPAK_REMOTE ; add the flathub repo
+  become: true
+  community.general.flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo
+
+- name: FLATPAK ; install org.qgis.qgis/x86_64/stable
+  become: true
+  community.general.flatpak:
+    name: org.qgis.qgis/x86_64/stable
+    state: present
+    remote: flathub
+
+#TODO: get list of QGIS plugins if they can be installed from CLI

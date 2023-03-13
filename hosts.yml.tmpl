@@ -1,0 +1,13 @@
+---
+
+all:
+  hosts:
+%{ for index, group in server_ips ~}
+    ${ server_names[index] }:
+      ansible_host: ${ server_ips[index] }
+      ansible_user: ${ username }
+%{ endfor ~}
+  vars:
+    SHARE_KEY: ${ manila_share_key }
+    PRIMARY_METASHAPE_LICENSE: "${ primary_metashape_license }"
+    SECONDARY_METASHAPE_LICENSE: "${ secondary_metashape_license }"

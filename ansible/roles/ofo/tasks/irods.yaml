@@ -1,0 +1,25 @@
+---
+
+- name: APT ; install libssl
+  become: true
+  apt:
+    deb: http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/{{ LIBSSL_DEB }}
+
+- name: APT_KEY ; add the irods key
+  become: true
+  ansible.builtin.apt_key:
+    url: https://packages.irods.org/irods-signing-key.asc
+    state: present
+
+- name: APT_REPOSITORY | add the irods repo
+  become: true
+  ansible.builtin.apt_repository:
+    repo: "deb [arch=amd64] https://packages.irods.org/apt/ focal main"
+    state: present
+
+- name: APT ; install irods-icommands
+  become: true
+  apt:
+    name: irods-icommands
+    state: present
+    update_cache: yes

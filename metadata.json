@@ -1,0 +1,134 @@
+{
+  "name": "single image openstack instances",
+  "author": "Edwin Skidmore",
+  "author_email": "edwin@cyverse.org",
+  "description": "simple launch of one or more vms",
+  "template_type": "openstack_terraform",
+  "purpose": "compute",
+  "cacao_post_tasks": [
+    {
+      "type": "ansible",
+      "location_type": "cacao_atmosphere_legacy"
+    }
+  ],
+  "parameters": {
+    "username": {
+      "type": "cacao_username",
+      "default": "username",
+      "ui_label": "CACAO username",
+      "description": "CACAO username"
+    },
+    "region": {
+      "type": "cacao_provider_region",
+      "default": "IU",
+      "ui_label": "Openstack region",
+      "description": "Openstack region"
+    },
+    "instance_name": {
+      "type": "string",
+      "ui_label": "Instance name",
+      "description": "Instance name"
+    },
+    "instance_count": {
+      "type": "integer",
+      "default": 1,
+      "ui_label": "# of Instances",
+      "description": "# of instances"
+    },
+    "image": {
+      "type": "cacao_provider_image",
+      "ui_label": "Boot image id",
+      "description": "Boot image id",
+      "default":""
+    },
+    "image_name": {
+      "type": "cacao_provider_image_name",
+      "ui_label": "Boot image name",
+      "description": "Boot image name",
+      "default":""
+    },
+    "flavor": {
+      "type": "cacao_provider_flavor",
+      "ui_label": "Flavor",
+      "description": "Instance type"
+    },
+    "project": {
+      "type": "cacao_provider_project",
+      "ui_label": "Project ID",
+      "description": "OpenStack Project ID"
+    },
+    "keypair": {
+      "type": "cacao_provider_key_pair",
+      "default": "cacao-ssh-key",
+      "ui_label": "Key-pair",
+      "description": "Key-pair for instance access"
+    },
+    "power_state": {
+      "type": "string",
+      "default": "active",
+      "enum": [
+        "active",
+        "shutoff",
+        "suspend",
+        "shelved_offloaded"
+      ],
+      "ui_label": "Power state",
+      "description": "Power state"
+    },
+    "ip_pool": {
+      "type": "cacao_provider_external_network",
+      "default": "external_network_name",
+      "ui_label": "IP pool",
+      "description": "IP pool"
+    },
+    "user_data": {
+      "type": "cacao_cloud_init",
+      "description": "cloud init script"
+    },
+    "root_storage_source": {
+      "type": "string",
+      "default": "image",
+      "enum": [
+        "image"
+      ],
+      "ui_label": "Root source type",
+      "description": "Source of root disk; currently, only image is supported "
+    },
+    "root_storage_type": {
+      "type": "string",
+      "default": "local",
+      "enum": [
+        "local",
+        "volume"
+      ],
+      "ui_label": "Root storage type",
+      "description": "type of root storage, either local or volume"
+    },
+    "root_storage_size": {
+      "type": "integer",
+      "ui_label": "Root storage size",
+      "description": "Size of root storage in GB",
+      "default" : -1
+    },
+    "root_storage_delete_on_termination": {
+      "type": "bool",
+      "ui_label": "Root storage delete on termination",
+      "description": "if true, will delete the root storage when instance is deleted"
+    },
+    "manila_share_key": {
+      "type": "string",
+      "ui_label": "Manila share key",
+      "description": "key required to access manila share"
+    },
+    "primary_metashape_license": {
+      "type": "string",
+      "ui_label": "Primary metashape license content",
+      "description": "complete primary license file text"
+    },
+    "secondary_metashape_license": {
+      "type": "string",
+      "ui_label": "Secondary metashape license content",
+      "description": "complete secondary license file text"
+    }
+  }
+}
