@@ -1,0 +1,13 @@
+hosts.yml
+tmp
+terraform.tfstate*
+terraform.tfvars
+tf.out
+.terraform.lock.hcl
+.terraform
+.terraform.tfstate.lock.info
+plan.out
+gpu-testing/
+openrc.sh
+app-cred-hydrogen_ansible-openrc.sh
+*.tfvars

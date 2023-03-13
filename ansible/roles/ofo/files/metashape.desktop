@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Terminal=true
+Name=Metashape
+Icon=/opt/metashape-pro/metashape_icon.jpg
+Exec=/opt/metashape-pro/metashape.sh
