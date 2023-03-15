@@ -1,8 +1,8 @@
 {
-  "name": "single image openstack instances",
-  "author": "Edwin Skidmore",
-  "author_email": "edwin@cyverse.org",
-  "description": "simple launch of one or more vms",
+  "name": "single image openstack instances with ofo dev tools installed",
+  "author": "Jeremy Frady",
+  "author_email": "jeremyfrady@cyverse.org",
+  "description": "simple launch of one or more vms with ofo dev tools installed",
   "template_type": "openstack_terraform",
   "purpose": "compute",
   "cacao_post_tasks": [
