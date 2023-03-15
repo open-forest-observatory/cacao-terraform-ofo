@@ -1,0 +1,11 @@
+hosts.yml
+tmp
+terraform.tfstate*
+terraform.tfvars
+tf.out
+.terraform.lock.hcl
+.terraform
+.terraform.tfstate.lock.info
+plan.out
+openrc.sh
+*.tfvars

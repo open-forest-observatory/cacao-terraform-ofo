@@ -1,0 +1,88 @@
+---
+# this is the add_cranapt_jammy.sh script, sourced here: https://github.com/eddelbuettel/r2u/blob/master/inst/scripts/add_cranapt_jammy.sh
+
+- name: APT_KEY | add the r repo key
+  become: true
+  apt_key:
+    url: https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc
+    state: present
+
+- name: APT_KEY | add the cran repo key
+  become: true
+  apt_key:
+    url: https://eddelbuettel.github.io/r2u/assets/dirk_eddelbuettel_key.asc
+    state: present
+
+- name: APT_REPOSITORY | add the r repo
+  become: true
+  ansible.builtin.apt_repository:
+    repo: "deb https://cloud.r-project.org/bin/linux/ubuntu jammy-cran40/"
+    state: present
+
+- name: APT_REPOSITORY | add the cran repo
+  become: true
+  ansible.builtin.apt_repository:
+    repo: "deb [arch=amd64] https://r2u.stat.illinois.edu/ubuntu jammy main"
+    state: present
+
+- name: APT_KEY ; add some key
+  become: true
+  ansible.builtin.apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: 67C2D66C4B1D4339
+
+- name: APT_KEY ; add some other key
+  become: true
+  ansible.builtin.apt_key:
+    keyserver: keyserver.ubuntu.com
+    id: 51716619E084DAB9
+
+- name: APT ; install r packages
+  become: true
+  apt:
+    pkg:
+      - r-base
+      - r-base-dev
+      - r-base-core
+      - rclone
+      - wget
+      - ca-certificates
+    state: present
+    update_cache: yes
+    install_recommends: false
+
+- name: APT ; install rstudio from remote deb
+  become: true
+  apt:
+    deb: https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2022.12.0-353-amd64.deb
+
+- name: LINEINFILE ; ensure RSTUDIO_WHICH_R in .profile
+  ansible.builtin.lineinfile:
+    path: ~/.profile
+    line: 'export RSTUDIO_WHICH_R="/usr/lib/R/bin/R"'
+
+- name: COPY ; copy /etc/apt/preferences.d/99cranapt
+  become: true
+  copy:
+    src: 99cranapt
+    dest: /etc/apt/preferences.d/99cranapt
+
+- name: APT ; install python3 packages
+  become: true
+  apt:
+    pkg:
+      - python3-dbus
+      - python3-gi
+      - python3-apt
+    state: present
+    update_cache: yes
+
+- name: SHELL ; use Rscript to install bspm
+  become: true
+  shell: Rscript -e 'install.packages("bspm")'
+
+- name: LINEINFILE ; ensure suppressMessages in /usr/lib/R/etc/Rprofile.site
+  ansible.builtin.lineinfile:
+    path: /usr/lib/R/etc/Rprofile.site
+    line: 'suppressMessages(bspm::enable())'
+  become: true

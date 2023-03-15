@@ -1,0 +1,14 @@
+---
+
+- name: LINEINFILE ; configure sshd
+  become: true
+  lineinfile:
+    path: "/etc/ssh/sshd_config"
+    regex: "^(#)?{{item.key}}"
+    line: "{{item.key}} {{item.value}}"
+    state: present
+  loop:
+    - { key: "ClientAliveInterval", value: "300" }
+    - { key: "ClientAliveCountMax", value: "36" }
+  notify:
+    - restart sshd
