@@ -77,6 +77,80 @@
     state: present
     update_cache: yes
 
+- name: APT ; install r packages
+  become: true
+  apt:
+    pkg:
+      -  r-cran-arrow
+      -  r-cran-brms
+      -  r-cran-coda
+      -  r-cran-cowplot
+      -  r-cran-data.table
+      -  r-cran-dbplyr
+      -  r-cran-devtools
+      -  r-cran-dt
+      -  r-cran-duckdb
+      -  r-cran-elevatr
+      -  r-cran-exifr
+      -  r-cran-foresttools
+      -  r-cran-fs
+      -  r-cran-furrr
+      -  r-cran-ggally
+      -  r-cran-ggeffects
+      -  r-cran-ggpubr
+      -  r-cran-ggrepel
+      -  r-cran-ggspatial
+      -  r-cran-gitcreds
+      -  r-cran-gh
+      -  r-cran-glue
+      -  r-cran-here
+      -  r-cran-httr
+      -  r-cran-janitor
+      -  r-cran-knitr
+      -  r-cran-lidr
+      -  r-cran-lme4
+      -  r-cran-loo
+      -  r-cran-lubridate
+      -  r-cran-maptools
+      -  r-cran-mgcv
+      -  r-cran-mgcviz
+      -  r-cran-nlme
+      -  r-cran-nnet
+      -  r-cran-nngeo
+      -  r-cran-openssl
+      -  r-cran-pkgdown
+      -  r-cran-raster
+      -  r-cran-readxl
+      -  r-cran-remotes
+      -  r-cran-rnaturalearth
+      -  r-cran-rnaturalearthhires
+      -  r-cran-roxygen2
+      -  r-cran-rstan
+      -  r-cran-scales
+      -  r-cran-sf
+      -  r-cran-shiny
+      -  r-cran-shinystan
+      -  r-cran-slippymath
+      -  r-cran-smoothr
+      -  r-cran-spatial
+      -  r-cran-spatialeco
+      -  r-cran-stringr
+      -  r-cran-suncalc
+      -  r-cran-terra
+      -  r-cran-testthat
+      -  r-cran-tictoc
+      -  r-cran-tidyverse
+      -  r-cran-tidyterra
+      -  r-cran-units
+      -  r-cran-usethis
+      -  r-cran-viridis
+      -  r-cran-vroom
+      -  r-cran-xml2
+      -  r-cran-yaml
+      -  r-cran-zip
+      -  r-cran-zoo
+    state: present
+
 - name: SHELL ; use Rscript to install bspm
   become: true
   shell: Rscript -e 'install.packages("bspm")'
