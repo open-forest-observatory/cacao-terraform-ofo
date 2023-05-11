@@ -36,7 +36,6 @@ resource "openstack_compute_instance_v2" "os_instances" {
   user_data = var.user_data
 
   network {
-    # name = "auto_allocated_network"
     uuid = data.openstack-auto-topology_auto_allocated_topology.network.id
   }
 
