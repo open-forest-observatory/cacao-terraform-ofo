@@ -2,14 +2,14 @@
 - name: SHELL ; grab metashape-pro_2_0_0_amd64.tar.gz, unzip, mv to bin
   become: true
   unarchive:
-    src: https://s3-eu-west-1.amazonaws.com/download.agisoft.com/metashape-pro_2_0_0_amd64.tar.gz
+    src: "{{ METASHAPE_PRO_URL }}"
     dest: /opt
     remote_src: yes
 
 - name: GET_URL ; grab metashape_icon.jpg
   become: true
   get_url:
-    url: https://yt3.ggpht.com/ytc/AMLnZu_dMjWqf8JdyAiiVaYhv5DdGECBlHd9MnSv9uQQtw=s176-c-k-c0x00ffffff-no-rj
+    url: "{{ METASHAPE_PRO_ICON_URL }}"
     dest: /opt/metashape-pro/metashape_icon.jpg
 
 - name: COPY ; copy metashape.desktop
@@ -57,8 +57,8 @@
     path: ~/.profile
     line: 'export agisoft_LICENSE="/opt/metashape-pro/metashape_lic/"'
 
-- name: SHELL ; run conda activate and pip for meta200
+- name: SHELL ; run conda activate and pip for metashape20
   shell:
-    cmd: ~/anaconda3/bin/conda run -n meta200 pip install https://s3-eu-west-1.amazonaws.com/download.agisoft.com/Metashape-2.0.0-cp35.cp36.cp37.cp38-abi3-linux_x86_64.whl
+    cmd: "~/anaconda3/bin/conda run -n metashape20 pip install {{ METASHAPE_PRO_WHL_MODULE }}"
   args:
     executable: /bin/bash
