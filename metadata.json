@@ -35,6 +35,12 @@
       "description": "Instance name"
     },
     {
+      "name": "flavor",
+      "type": "cacao_provider_flavor",
+      "ui_label": "Flavor",
+      "description": "Instance type"
+    },
+    {
       "name": "instance_count",
       "type": "integer",
       "default": 1,
@@ -54,12 +60,6 @@
       "ui_label": "Boot image name",
       "description": "Boot image name",
       "default":""
-    },
-    {
-      "name": "flavor",
-      "type": "cacao_provider_flavor",
-      "ui_label": "Flavor",
-      "description": "Instance type"
     },
     {
       "name": "project",
