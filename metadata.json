@@ -35,17 +35,17 @@
       "description": "Instance name"
     },
     {
-      "name": "flavor",
-      "type": "cacao_provider_flavor",
-      "ui_label": "Flavor",
-      "description": "Instance type"
-    },
-    {
-      "name": "instance_count",
-      "type": "integer",
-      "default": 1,
-      "ui_label": "# of Instances",
-      "description": "# of instances"
+      "name": "power_state",
+      "type": "string",
+      "default": "active",
+      "enum": [
+        "active",
+        "shutoff",
+        "suspend",
+        "shelved_offloaded"
+      ],
+      "ui_label": "Power state",
+      "description": "Power state"
     },
     {
       "name": "image",
@@ -62,6 +62,19 @@
       "default":""
     },
     {
+      "name": "instance_count",
+      "type": "integer",
+      "default": 1,
+      "ui_label": "# of Instances",
+      "description": "# of instances"
+    },
+    {
+      "name": "flavor",
+      "type": "cacao_provider_flavor",
+      "ui_label": "Flavor",
+      "description": "Instance type"
+    },
+    {
       "name": "project",
       "type": "cacao_provider_project",
       "ui_label": "Project ID",
@@ -73,19 +86,6 @@
       "default": "cacao-ssh-key",
       "ui_label": "Key-pair",
       "description": "Key-pair for instance access"
-    },
-    {
-      "name": "power_state",
-      "type": "string",
-      "default": "active",
-      "enum": [
-        "active",
-        "shutoff",
-        "suspend",
-        "shelved_offloaded"
-      ],
-      "ui_label": "Power state",
-      "description": "Power state"
     },
     {
       "name": "ip_pool",
