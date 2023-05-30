@@ -100,6 +100,24 @@
       "description": "cloud init script"
     },
     {
+      "name": "manila_share_key",
+      "type": "string",
+      "ui_label": "Manila share key",
+      "description": "key required to access manila share"
+    },
+    {
+      "name": "primary_metashape_license",
+      "type": "string",
+      "ui_label": "Primary metashape license content",
+      "description": "complete primary license file text"
+    },
+    {
+      "name": "secondary_metashape_license",
+      "type": "string",
+      "ui_label": "Secondary metashape license content",
+      "description": "complete secondary license file text"
+    },
+    {
       "name": "root_storage_source",
       "type": "string",
       "default": "image",
@@ -133,24 +151,6 @@
       "ui_label": "Root storage delete on termination",
       "description": "if true, will delete the root storage when instance is deleted",
       "default": true
-    },
-    {
-      "name": "manila_share_key",
-      "type": "string",
-      "ui_label": "Manila share key",
-      "description": "key required to access manila share"
-    },
-    {
-      "name": "primary_metashape_license",
-      "type": "string",
-      "ui_label": "Primary metashape license content",
-      "description": "complete primary license file text"
-    },
-    {
-      "name": "secondary_metashape_license",
-      "type": "string",
-      "ui_label": "Secondary metashape license content",
-      "description": "complete secondary license file text"
     }
   ]
 }
