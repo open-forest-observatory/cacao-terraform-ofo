@@ -1,0 +1,22 @@
+---
+
+- name: GET_URL | get the apt key
+  ansible.builtin.get_url:
+    url: https://download.qgis.org/downloads/qgis-archive-keyring.gpg
+    dest: /etc/apt/keyrings/qgis-archive-keyring.gpg 
+  become: true
+
+- name: COPY ; copy /etc/apt/sources.list.d/qgis.sources
+  become: true
+  copy:
+    src: qgis.sources
+    dest: /etc/apt/sources.list.d/qgis.sources
+
+- name: APT ; install qgis
+  become: true
+  apt:
+    pkg:
+      - qgis 
+      - qgis-plugin-grass
+    state: present
+    update_cache: yes
