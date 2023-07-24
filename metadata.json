@@ -1,5 +1,5 @@
 {
-  "schema_url": "https://gitlab.com/cyverse/cacao-common/-/raw/master/template/metadata-schemas/v2/schema.json",
+  "schema_url": "https://gitlab.com/cyverse/cacao-common/-/raw/master/template/metadata-schemas/v3/schema.json",
   "name": "single image openstack instances",
   "author": "Jeremy Frady",
   "author_email": "jeremyfrady@cyverse.org",
@@ -18,80 +18,67 @@
       "name": "username",
       "type": "cacao_username",
       "default": "username",
-      "ui_label": "CACAO username",
       "description": "CACAO username"
     },
     {
       "name": "region",
       "type": "cacao_provider_region",
       "default": "IU",
-      "ui_label": "Openstack region",
       "description": "Openstack region"
     },
     {
       "name": "instance_name",
       "type": "string",
-      "ui_label": "Instance name",
-      "description": "Instance name"
+      "description": "Instance name",
+      "editable": true
     },
     {
       "name": "power_state",
       "type": "string",
       "default": "active",
-      "enum": [
-        "active",
-        "shutoff",
-        "suspend",
-        "shelved_offloaded"
-      ],
-      "ui_label": "Power state",
-      "description": "Power state"
+      "enum": ["active", "shutoff", "suspend", "shelved_offloaded"],
+      "description": "Power state",
+      "editable": true
     },
     {
       "name": "image",
       "type": "cacao_provider_image",
-      "ui_label": "Boot image id",
       "description": "Boot image id",
-      "default":""
+      "default": ""
     },
     {
       "name": "image_name",
       "type": "cacao_provider_image_name",
-      "ui_label": "Boot image name",
       "description": "Boot image name",
-      "default":""
+      "default": ""
     },
     {
       "name": "instance_count",
       "type": "integer",
       "default": 1,
-      "ui_label": "# of Instances",
-      "description": "# of instances"
+      "description": "# of instances",
+      "editable": true
     },
     {
       "name": "flavor",
       "type": "cacao_provider_flavor",
-      "ui_label": "Flavor",
       "description": "Instance type"
     },
     {
       "name": "project",
       "type": "cacao_provider_project",
-      "ui_label": "Project ID",
       "description": "OpenStack Project ID"
     },
     {
       "name": "keypair",
       "type": "cacao_provider_key_pair",
       "default": "cacao-ssh-key",
-      "ui_label": "Key-pair",
       "description": "Key-pair for instance access"
     },
     {
       "name": "ip_pool",
       "type": "cacao_provider_external_network",
       "default": "external_network_name",
-      "ui_label": "IP pool",
       "description": "IP pool"
     },
     {
@@ -102,53 +89,41 @@
     {
       "name": "manila_share_key",
       "type": "string",
-      "ui_label": "Manila share key",
       "description": "key required to access manila share"
     },
     {
       "name": "primary_metashape_license",
       "type": "string",
-      "ui_label": "Primary metashape license content",
       "description": "complete primary license file text"
     },
     {
       "name": "secondary_metashape_license",
       "type": "string",
-      "ui_label": "Secondary metashape license content",
       "description": "complete secondary license file text"
     },
     {
       "name": "root_storage_source",
       "type": "string",
       "default": "image",
-      "enum": [
-        "image"
-      ],
-      "ui_label": "Root source type",
+      "enum": ["image"],
       "description": "Source of root disk; currently, only image is supported "
     },
     {
       "name": "root_storage_type",
       "type": "string",
       "default": "local",
-      "enum": [
-        "local",
-        "volume"
-      ],
-      "ui_label": "Root storage type",
+      "enum": ["local", "volume"],
       "description": "type of root storage, either local or volume"
     },
     {
       "name": "root_storage_size",
       "type": "integer",
-      "ui_label": "Root storage size",
       "description": "Size of root storage in GB",
-      "default" : -1
+      "default": -1
     },
     {
       "name": "root_storage_delete_on_termination",
       "type": "bool",
-      "ui_label": "Root storage delete on termination",
       "description": "if true, will delete the root storage when instance is deleted",
       "default": true
     }
