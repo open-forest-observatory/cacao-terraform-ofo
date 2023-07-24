@@ -1,9 +1,11 @@
 ---
 # https://raw.githubusercontent.com/open-forest-observatory/environments/main/jetstream/jetstream-vm-setup.sh
+- include_tasks: git_config.yaml
 - include_tasks: manila.yaml
 - include_tasks: irods.yaml
 - include_tasks: ssh_timeout.yaml
-- include_tasks: flatpak_and_qgis.yaml
+- include_tasks: qgis.yaml
+- include_tasks: chromium.yaml
 - include_tasks: anaconda.yaml
 - include_tasks: metashape.yaml
 - include_tasks: sublime.yaml

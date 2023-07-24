@@ -1,0 +1,7 @@
+---
+
+- name: SHELL ; run git config 
+  shell:
+    cmd: "git config --global credential.helper store"
+  args:
+    executable: /bin/bash

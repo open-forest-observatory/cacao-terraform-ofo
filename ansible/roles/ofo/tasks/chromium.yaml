@@ -1,0 +1,9 @@
+---
+
+- name: APT ; install chromium-browser
+  become: true
+  apt:
+    pkg:
+      - chromium-browser
+    state: present
+    update_cache: yes
