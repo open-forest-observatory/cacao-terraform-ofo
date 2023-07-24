@@ -1,0 +1,60 @@
+{
+    "schema_url": "https://gitlab.com/cyverse/cacao-common/-/raw/master/template/ui-schemas/v1/schema.json",
+    "schema_version": "1",
+    "author": "Sean Davey",
+    "author_email": "sdavey@arizona.edu",
+    "steps": [
+      {
+        "title": "Parameters",
+        "items": [
+          {
+            "name": "region",
+            "ui_label": "Openstack region"
+          },
+          {
+            "name": "instance_name",
+            "ui_label": "Instance name"
+          },
+          {
+            "name": "power_state",
+            "ui_label": "Power state"
+          },
+          {
+            "name": "image_name",
+            "ui_label": "Boot image name",
+            "parameters": [{ "key": "windows_disclaimer", "value": true }]
+          },
+          {
+            "name": "instance_count",
+            "ui_label": "# of Instances"
+          },
+          {
+            "name": "flavor",
+            "ui_label": "Flavor"
+          },
+          {
+            "name": "manila_share_key",
+            "ui_label": "Manila share key"
+          },
+          {
+            "name": "primary_metashape_license",
+            "ui_label": "Primary metashape license content"
+          },
+          {
+            "name": "secondary_metashape_license",
+            "ui_label": "Secondary metashape license content"
+          },
+          {
+            "type": "advanced_settings",
+            "collapsible": true,
+            "title": "Advanced",
+            "items": [
+              {
+                "name": "root_storage"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
