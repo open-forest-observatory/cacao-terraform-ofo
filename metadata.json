@@ -89,7 +89,8 @@
     {
       "name": "manila_share_key",
       "type": "string",
-      "description": "key required to access manila share"
+      "description": "key required to access manila share",
+      "default": ""
     },
     {
       "name": "primary_metashape_license",

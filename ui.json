@@ -34,7 +34,7 @@
           },
           {
             "name": "manila_share_key",
-            "ui_label": "Manila share key"
+            "ui_label": "Manila share key, leave blank if none"
           },
           {
             "name": "primary_metashape_license",

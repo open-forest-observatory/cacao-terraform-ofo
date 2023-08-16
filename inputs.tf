@@ -106,6 +106,7 @@ variable "root_storage_delete_on_termination" {
 variable "manila_share_key" {
   type = string
   description = "string, key required to access manila share"
+  default = ""
 }
 
 variable "primary_metashape_license" {
