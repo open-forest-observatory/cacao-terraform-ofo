@@ -14,6 +14,12 @@ variable "region" {
   default = "IU"
 }
 
+variable "network_name" {
+  type = string
+  description = "string, openstack network name; default = auto_allocated_network"
+  default = "auto_allocated_network"
+}
+
 variable "instance_name" {
   type = string
   description = "name of instance"

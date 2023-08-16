@@ -1,8 +1,5 @@
 terraform {
   required_providers {
-    openstack-auto-topology = {
-      source = "zhxu73/openstack-auto-topology"
-    }
     openstack = {
       source = "terraform-provider-openstack/openstack" # "terraform.cyverse.org/cyverse/openstack"
     }
@@ -12,17 +9,6 @@ terraform {
 provider "openstack" {
   tenant_name = var.project
   region = var.region
-}
-
-provider "openstack-auto-topology" {}
-
-data "openstack-auto-topology_auto_allocated_topology" "network" {
-  project_name = var.project
-  region_name = var.region
-}
-
-output "network_id" {
-  value = data.openstack-auto-topology_auto_allocated_topology.network.id
 }
 
 resource "openstack_compute_instance_v2" "os_instances" {
@@ -36,7 +22,8 @@ resource "openstack_compute_instance_v2" "os_instances" {
   user_data = var.user_data
 
   network {
-    uuid = data.openstack-auto-topology_auto_allocated_topology.network.id
+    # make the assumption that we will always use auto allocated topology network
+    name = var.network_name
   }
 
   block_device {
