@@ -23,7 +23,7 @@ resource "openstack_compute_instance_v2" "os_instances" {
 
   network {
     # make the assumption that we will always use auto allocated topology network
-    name = "auto_allocated_network"
+    name = var.network_name
   }
 
   block_device {
