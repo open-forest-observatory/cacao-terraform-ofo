@@ -83,4 +83,6 @@ data "openstack_images_image_v2" "instance_image" {
 locals {
   image_uuid = var.image_name == "" ? var.image : data.openstack_images_image_v2.instance_image.0.id
   volume_size = var.root_storage_size > 0 ? var.root_storage_size : null
+  split_username = split("@", var.username)
+  real_username = local.split_username[0]
 }
