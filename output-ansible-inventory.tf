@@ -4,7 +4,7 @@ resource "local_file" "ansible-inventory" {
     {
         server_ips = openstack_compute_floatingip_associate_v2.os_floatingips_associate.*.floating_ip
         server_names = openstack_compute_instance_v2.os_instances.*.name # we could use this instead of an generically generated index name
-        username = var.username
+        username = local.real_username
         manila_share_key = var.manila_share_key
         primary_metashape_license = var.primary_metashape_license
         secondary_metashape_license = var.secondary_metashape_license
