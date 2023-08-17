@@ -22,8 +22,8 @@
   become: true
   file:
     path: /opt/metashape-pro
-    owner: ubuntu
-    group: ubuntu
+    owner: {{ username }}
+    group: {{ username }}
     recurse: yes
 
 - name: APT ; install libxcb-xinerama0
