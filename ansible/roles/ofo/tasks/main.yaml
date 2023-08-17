@@ -2,7 +2,7 @@
 # https://raw.githubusercontent.com/open-forest-observatory/environments/main/jetstream/jetstream-vm-setup.sh
 - include_tasks: git_config.yaml
 - include_tasks: manila.yaml
-  when: manila_share_key != ""
+  when: manila_share_key is defined and (manila_share_key != "" or manila_share_key != None)
 - include_tasks: irods.yaml
 - include_tasks: ssh_timeout.yaml
 - include_tasks: qgis.yaml
