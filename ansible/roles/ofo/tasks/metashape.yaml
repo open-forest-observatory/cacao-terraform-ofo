@@ -22,8 +22,8 @@
   become: true
   file:
     path: /opt/metashape-pro
-    owner: "{{ username }}"
-    group: "{{ username }}"
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
     recurse: yes
 
 - name: APT ; install libxcb-xinerama0
