@@ -93,14 +93,9 @@
       "default": ""
     },
     {
-      "name": "primary_metashape_license",
+      "name": "metashape_license_server_ip",
       "type": "string",
-      "description": "complete primary license file text"
-    },
-    {
-      "name": "secondary_metashape_license",
-      "type": "string",
-      "description": "complete secondary license file text"
+      "description": "IP address of Metashape license server"
     },
     {
       "name": "root_storage_source",

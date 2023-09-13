@@ -109,14 +109,9 @@ variable "manila_share_key" {
   default = ""
 }
 
-variable "primary_metashape_license" {
+variable "metashape_license_server_ip" {
   type = string
-  description = "string, complete license file text"
-}
-
-variable "secondary_metashape_license" {
-  type = string
-  description = "string, complete secondary license file text"
+  description = "string, IP address of Metashape license server"
 }
 
 variable "do_ansible_execution" {

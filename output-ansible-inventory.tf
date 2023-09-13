@@ -6,8 +6,7 @@ resource "local_file" "ansible-inventory" {
         server_names = openstack_compute_instance_v2.os_instances.*.name # we could use this instead of an generically generated index name
         username = local.real_username
         manila_share_key = var.manila_share_key
-        primary_metashape_license = var.primary_metashape_license
-        secondary_metashape_license = var.secondary_metashape_license
+        metashape_license_server_ip = var.metashape_license_server_ip
     })
     filename = "${path.module}/ansible/hosts.yaml"
 }

@@ -2,8 +2,7 @@
 SHARE_DIR: /ofo-share
 CEPH_DIR: /etc/ceph
 SHARE_KEY: the_share_key_was_not_set_successfully
-PRIMARY_METASHAPE_LICENSE: the_license_was_not_set_successfully
-SECONDARY_METASHAPE_LICENSE: the_license_was_not_set_successfully
+METASHAPE_LICENSE_SERVER_IP: the_license_was_not_set_successfully
 LIBSSL_DEB: libssl1.1_1.1.0g-2ubuntu4_amd64.deb
 ANACONDA3_VERSION: Anaconda3-2022.10-Linux-x86_64
 METASHAPE_PRO_URL: https://s3-eu-west-1.amazonaws.com/download.agisoft.com/metashape-pro_2_0_2_amd64.tar.gz
