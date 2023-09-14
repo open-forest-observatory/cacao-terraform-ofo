@@ -1,5 +1,5 @@
 ---
-- name: SHELL ; grab metashape-pro_2_0_0_amd64.tar.gz, unzip, mv to bin
+- name: SHELL ; grab metashape-pro_*.tar.gz, unzip, mv to bin
   become: true
   unarchive:
     src: "{{ METASHAPE_PRO_URL }}"
