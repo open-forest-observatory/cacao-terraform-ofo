@@ -37,12 +37,8 @@
             "ui_label": "Manila share key, leave blank if none"
           },
           {
-            "name": "primary_metashape_license",
-            "ui_label": "Primary metashape license content"
-          },
-          {
-            "name": "secondary_metashape_license",
-            "ui_label": "Secondary metashape license content"
+            "name": "metashape_license_server_ip",
+            "ui_label": "Metashape license server IP address"
           },
           {
             "type": "advanced_settings",

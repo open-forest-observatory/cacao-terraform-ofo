@@ -32,33 +32,14 @@
     name: libxcb-xinerama0
     state: present
 
-- name: FILE ; ensure the license directory exists
-  file:
-    path: /opt/metashape-pro/metashape_lic
-    state: directory
-    mode: '0750'
-
-- name: TEMPLATE ; template the license files
-  template:
-    src: "license.j2"
-    dest: /opt/metashape-pro/metashape_lic/{{ item.dest }}
-    mode: 0600
-  loop:
-    - { dest: 'primary.lic', license: '{{ PRIMARY_METASHAPE_LICENSE }}'}
-    - { dest: 'secondary.lic', license: '{{ SECONDARY_METASHAPE_LICENSE }}'}
-
-- name: LINEINFILE ; ensure agisoft_LICENSE in .bashrc
-  ansible.builtin.lineinfile:
-    path: ~/.bashrc
-    line: 'export agisoft_LICENSE="/opt/metashape-pro/metashape_lic/"'
-
-- name: LINEINFILE ; ensure agisoft_LICENSE in .profile
+- name: LINEINFILE ; ensure AGISOFT_FLS (floating license server) env var in .profile
   ansible.builtin.lineinfile:
     path: ~/.profile
-    line: 'export agisoft_LICENSE="/opt/metashape-pro/metashape_lic/"'
+    line: 'export AGISOFT_FLS={{ METASHAPE_LICENSE_SERVER_IP }}:5842'
 
 - name: SHELL ; run conda activate and pip for metashape20
   shell:
     cmd: "~/anaconda3/bin/conda run -n metashape20 pip install {{ METASHAPE_PRO_WHL_MODULE }}"
   args:
     executable: /bin/bash
+    
