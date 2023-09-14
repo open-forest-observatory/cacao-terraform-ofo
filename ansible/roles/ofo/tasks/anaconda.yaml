@@ -25,6 +25,6 @@
   args:
     executable: /bin/bash
 
-- name: SHELL ; run conda create --name metashape20 python=3.8 PyYaml ipykernel
+- name: SHELL ; run conda create --name meta20 python=3.11 PyYaml ipykernel
   shell:
-    cmd: ~/anaconda3/bin/conda create --name metashape20 python=3.8 PyYaml ipykernel --yes
+    cmd: ~/anaconda3/bin/conda create --name meta20 python=3.11 PyYaml ipykernel --yes
