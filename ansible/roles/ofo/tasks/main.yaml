@@ -12,3 +12,4 @@
 - include_tasks: sublime.yaml
 - include_tasks: r.yaml
 - include_tasks: jupyter.yaml
+- include_tasks: ssl.yaml
