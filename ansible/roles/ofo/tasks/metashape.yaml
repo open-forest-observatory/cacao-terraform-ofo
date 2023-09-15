@@ -5,6 +5,7 @@
     src: "{{ METASHAPE_PRO_URL }}"
     dest: /opt
     remote_src: yes
+    creates: /opt/metashape-pro
 
 - name: GET_URL ; grab metashape_icon.jpg
   become: true
