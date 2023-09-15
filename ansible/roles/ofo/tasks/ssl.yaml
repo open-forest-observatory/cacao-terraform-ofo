@@ -1,0 +1,46 @@
+---
+# Implements this answer: https://stackoverflow.com/questions/53102584/how-can-i-set-up-an-rstudio-server-to-run-with-ssl-on-aws
+
+- name: APT ; install nginx
+  become: true
+  apt:
+    pkg:
+      - nginx
+    state: present
+
+- name: FILE ; create nginx ssl directory if it does not exist
+  become: true
+  ansible.builtin.file:
+    path: /etc/nginx/ssl
+    state: directory
+    mode: '0755'
+
+- name: SHELL ; create nginx self-signed certificate
+  shell:
+    cmd: sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/nginx.key -out /etc/nginx/ssl/nginx.crt -subj '/C=US/CN=OFO'
+    creates: /etc/nginx/ssl/nginx.key
+
+- name: TEMPLATE ; template the rstudio-server nginx config
+  become: true
+  template:
+    src: "rstudio-nginx-conf.j2"
+    dest: "/etc/nginx/conf.d/rstudio.conf"
+    mode: 0755
+
+- name: COPY ; copy nginx.conf # really we're adding some lines to the existing (default) conf, but it's easier to just copy a whole new file with those lines already aadded
+  become: true
+  copy:
+    src: nginx.conf
+    dest: /etc/nginx/nginx.conf
+  
+- name: LINEINFILE ; ensure rserver.conf set up correctly
+  become: true
+  ansible.builtin.lineinfile:
+    path: /etc/rstudio/rserver.conf
+    line: 'www-address=127.0.0.1'
+    insertafter: EOF
+
+- name: SHELL ; restart rstudio-server and nginx
+  shell:
+    cmd: sudo rstudio-server restart
+    cmd: sudo systemctl restart nginx
