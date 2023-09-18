@@ -3,7 +3,7 @@
   "name": "single image openstack instances",
   "author": "Jeremy Frady",
   "author_email": "jeremyfrady@cyverse.org",
-  "description": "simple launch of one or more vms with ofo dev tools installed",
+  "description": "Open Forest Observatory dev instances: launch one or more VMs with OFO dev tools installed",
   "template_type": "openstack_terraform",
   "purpose": "openstack_compute",
   "cacao_pre_tasks": [],
