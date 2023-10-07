@@ -33,6 +33,10 @@
             "ui_label": "Flavor"
           },
           {
+            "name": "do_ansible_execution",
+            "ui_label": "Install/reset software"
+          },          
+          {
             "name": "manila_share_key",
             "ui_label": "Manila share key, leave blank if none"
           },
