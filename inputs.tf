@@ -117,5 +117,5 @@ variable "metashape_license_server_ip" {
 variable "do_ansible_execution" {
   type = bool
   description = "bool, run the accompanying ansible"
-  default = true
+  #default = true
 }

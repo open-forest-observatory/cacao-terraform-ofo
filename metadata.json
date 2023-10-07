@@ -98,6 +98,12 @@
       "description": "IP address of Metashape license server"
     },
     {
+      "name": "do_ansible_execution",
+      "type": "bool",
+      "description": "run/update software on instance",
+      "default": true
+    },
+    {
       "name": "root_storage_source",
       "type": "string",
       "default": "image",
