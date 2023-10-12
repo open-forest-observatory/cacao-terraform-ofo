@@ -15,7 +15,7 @@ resource "null_resource" "ansible-execution" {
     count = var.do_ansible_execution && var.power_state == "active" ? 1 : 0
 
     provisioner "local-exec" {
-        command = "ANSIBLE_HOST_KEY_CHECKING=False ANSIBLE_SSH_PIPELINING=1 ANSIBLE_CONFIG=ansible.cfg ansible-playbook -i hosts.yaml playbook.yaml"
+        command = "ANSIBLE_HOST_KEY_CHECKING=False ANSIBLE_SSH_PIPELINING=1 ANSIBLE_CONFIG=ansible.cfg ansible-playbook -i hosts.yaml --forks=10 playbook.yaml"
         working_dir = "${path.module}/ansible"
     }
 
