@@ -1,5 +1,25 @@
 ---
 
 - hosts: all
-  roles:
-    - role: ofo
+  tasks:
+  - name: SET_FACT; set python interpreter
+    ansible.builtin.set_fact: ansible_python_interpreter="/usr/bin/python3"
+
+  - name: WAIT_FOR; Wait for ssh to be avaliable and connect
+    ansible.builtin.wait_for:
+      port: 22
+      host: '{{ (ansible_ssh_host|default(ansible_host))|default(inventory_hostname) }}'
+      search_regex: OpenSSH
+      delay: 10
+      timeout: 600
+    connection: local
+
+  # wait for 1 minute after establishing a connection
+  - name: PAUSE; because Jetstream 2 networking
+    ansible.builtin.pause:
+      minutes: 1
+
+  - name: INCLUDE_ROLE; registry-mirror
+    ansible.builtin.include_role: 
+      name: ofo
+
