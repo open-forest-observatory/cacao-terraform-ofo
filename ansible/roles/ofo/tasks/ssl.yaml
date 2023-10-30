@@ -7,7 +7,11 @@
     pkg:
       - nginx
     state: present
-
+  register: apt_result
+  until: apt_result is not failed
+  retries: 30
+  delay: 10
+  
 - name: FILE ; create nginx ssl directory if it does not exist
   become: true
   ansible.builtin.file:

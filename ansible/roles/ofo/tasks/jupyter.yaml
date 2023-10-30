@@ -6,3 +6,7 @@
     pkg:
       - jupyter-notebook
     state: present
+  register: apt_result
+  until: apt_result is not failed
+  retries: 30
+  delay: 10
