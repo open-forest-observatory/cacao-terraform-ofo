@@ -1,6 +1,7 @@
 ---
 
 - hosts: all
+  gather_facts: false
   tasks:
   - name: SET_FACT; set python interpreter
     ansible.builtin.set_fact: ansible_python_interpreter="/usr/bin/python3"
@@ -18,6 +19,10 @@
   - name: PAUSE; because Jetstream 2 networking
     ansible.builtin.pause:
       minutes: 1
+
+  - name: SETUP; gathering facts
+    ansible.builtin.setup:
+      gather_timeout: 60
 
   - name: INCLUDE_ROLE; registry-mirror
     ansible.builtin.include_role: 
