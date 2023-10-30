@@ -32,7 +32,11 @@
   apt:
     name: libxcb-xinerama0
     state: present
-
+  register: apt_result
+  until: apt_result is not failed
+  retries: 30
+  delay: 10
+  
 - name: LINEINFILE ; ensure AGISOFT_FLS (floating license server) env var in .profile
   ansible.builtin.lineinfile:
     path: ~/.profile

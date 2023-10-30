@@ -17,3 +17,7 @@
     name: sublime-text
     state: present
     update_cache: yes
+  register: apt_result
+  until: apt_result is not failed
+  retries: 30
+  delay: 10
