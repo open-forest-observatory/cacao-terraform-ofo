@@ -187,6 +187,8 @@
     name: radian
     state: present
 
-- name: SHELL ; copy radian executable to /opt/
-  become: true
-  shell: "cp /home/{{ ansible_user_id }}/.local/bin/radian /opt/radian"
+- name: LINK ; put symlink to radian binary in /opt/
+  file:
+    src: "/home/{{ ansible_user_id }}/.local/bin/radian"
+    path: /opt/radian
+    state: link
