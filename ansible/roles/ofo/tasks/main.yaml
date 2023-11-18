@@ -7,9 +7,9 @@
 - include_tasks: ssh_timeout.yaml
 - include_tasks: qgis.yaml
 - include_tasks: chromium.yaml
+- include_tasks: r.yaml
 - include_tasks: anaconda.yaml
 - include_tasks: metashape.yaml
 - include_tasks: sublime.yaml
-- include_tasks: r.yaml
 - include_tasks: jupyter.yaml
 - include_tasks: ssl.yaml

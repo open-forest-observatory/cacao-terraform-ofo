@@ -1,5 +1,6 @@
 ---
-# this is the add_cranapt_jammy.sh script, sourced here: https://github.com/eddelbuettel/r2u/blob/master/inst/scripts/add_cranapt_jammy.sh
+# this, in part, is the add_cranapt_jammy.sh script, sourced here: https://github.com/eddelbuettel/r2u/blob/master/inst/scripts/add_cranapt_jammy.sh
+# this must be run before the conda install
 
 - name: APT_KEY | add the r repo key
   become: true
@@ -58,7 +59,7 @@
 - name: APT ; install rstudio from remote deb
   become: true
   apt:
-    deb: https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2023.09.1-494-amd64.deb
+    deb: "{{ RSTUDIO_SERVER_DOWNLOAD_URL }}"
   register: apt_result
   until: apt_result is not failed
   retries: 30
@@ -179,3 +180,13 @@
     path: /usr/lib/R/etc/Rprofile.site
     line: 'suppressMessages(bspm::enable())'
   become: true
+
+- name: PIP ; use PIP to install radian R terminal
+  become: false
+  pip:
+    name: radian
+    state: present
+
+- name: SHELL ; copy radian executable to /opt/
+  become: true
+  shell: "cp /home/{{ ansible_user_id }}/.local/bin/radian /opt/radian"
