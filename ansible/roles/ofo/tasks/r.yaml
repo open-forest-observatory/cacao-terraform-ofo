@@ -175,6 +175,10 @@
   become: true
   shell: Rscript -e 'install.packages("bspm")'
 
+- name: SHELL ; use Rscript to install vscDegugger
+  become: true
+  shell: R -e "remotes::install_github('ManuelHentschel/vscDebugger')"
+
 - name: LINEINFILE ; ensure suppressMessages in /usr/lib/R/etc/Rprofile.site
   ansible.builtin.lineinfile:
     path: /usr/lib/R/etc/Rprofile.site
@@ -193,3 +197,12 @@
     src: "/home/{{ ansible_user_id }}/.local/bin/radian"
     path: /opt/radian
     state: link
+
+# temporary fix because prompt-toolkit > 3.0.39 breaks httpgd via radian and no plots show
+# can remove once fixed in package. https://github.com/randy3k/radian/issues/446
+- name: PIP ; force reinstall to lower version...temporary until fixed in this package
+  become: false
+  pip:
+    name: prompt-toolkit
+    state: forcereinstall
+    version: 3.0.39
