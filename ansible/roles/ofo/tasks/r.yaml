@@ -175,9 +175,9 @@
   become: true
   shell: Rscript -e 'install.packages("bspm")'
 
-- name: SHELL ; use Rscript to install vscDegugger
-  become: true
-  shell: R -e "remotes::install_github('ManuelHentschel/vscDebugger')"
+# - name: SHELL ; use Rscript to install vscDegugger
+#   become: true
+#   shell: R -e "remotes::install_github('ManuelHentschel/vscDebugger')"
 
 - name: LINEINFILE ; ensure suppressMessages in /usr/lib/R/etc/Rprofile.site
   ansible.builtin.lineinfile:
