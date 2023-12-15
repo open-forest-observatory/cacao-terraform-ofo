@@ -41,7 +41,7 @@ resource "openstack_compute_instance_v2" "os_instances" {
       error_message = "ERROR: template input image or image_name must be set"
     }
     ignore_changes = [
-      image_id
+      image_id, block_device.0.uuid, name, user_data
     ]
   }
 }
