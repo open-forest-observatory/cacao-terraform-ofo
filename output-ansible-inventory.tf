@@ -7,6 +7,7 @@ resource "local_file" "ansible-inventory" {
         username = local.real_username
         manila_share_key = var.manila_share_key
         metashape_license_server_ip = var.metashape_license_server_ip
+        install_r_packages = var.install_r_packages
     })
     filename = "${path.module}/ansible/hosts.yaml"
 }
