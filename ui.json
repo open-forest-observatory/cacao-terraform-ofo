@@ -1,8 +1,8 @@
 {
     "schema_url": "https://gitlab.com/cyverse/cacao-common/-/raw/master/template/ui-schemas/v1/schema.json",
     "schema_version": "1",
-    "author": "Sean Davey",
-    "author_email": "sdavey@arizona.edu",
+    "author": "Sean Davey, Derek Young",
+    "author_email": "sdavey@arizona.edu, djyoung@ucdavis.edu",
     "steps": [
       {
         "title": "Parameters",
@@ -39,6 +39,10 @@
           {
             "name": "metashape_license_server_ip",
             "ui_label": "Metashape license server IP address"
+          },
+          {
+            "name": "install_r_packages",
+            "ui_label": "Install R packages"
           },
           {
             "type": "advanced_settings",

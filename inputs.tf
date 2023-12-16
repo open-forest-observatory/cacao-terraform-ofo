@@ -114,6 +114,11 @@ variable "metashape_license_server_ip" {
   description = "string, IP address of Metashape license server"
 }
 
+variable "install_r_packages" {
+  type = bool
+  description = "bool, install R packages (disable if deployment errors)"
+}
+
 variable "do_ansible_execution" {
   type = bool
   description = "bool, run the accompanying ansible"

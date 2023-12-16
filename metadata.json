@@ -1,8 +1,8 @@
 {
   "schema_url": "https://gitlab.com/cyverse/cacao-common/-/raw/master/template/metadata-schemas/v3/schema.json",
   "name": "single image openstack instances",
-  "author": "Jeremy Frady",
-  "author_email": "jeremyfrady@cyverse.org",
+  "author": "Jeremy Frady, Derek Young",
+  "author_email": "jeremyfrady@cyverse.org, djyoung@ucdavis.edu",
   "description": "Open Forest Observatory dev instances: launch one or more VMs with OFO dev tools installed",
   "template_type": "openstack_terraform",
   "purpose": "openstack_compute",
@@ -91,6 +91,12 @@
       "type": "string",
       "description": "key required to access manila share",
       "default": ""
+    },
+    {
+      "name": "install_r_packages",
+      "type": "bool",
+      "description": "Install R packages? Disable if deployment errors.",
+      "default": true
     },
     {
       "name": "metashape_license_server_ip",
