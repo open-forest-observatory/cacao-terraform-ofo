@@ -170,7 +170,7 @@
   until: apt_result is not failed
   retries: 30
   delay: 10
-  when: "{{ install_r_packages }}"
+  when: INSTALL_R_PACKAGES | bool
   
 - name: SHELL ; use Rscript to install bspm
   become: true
@@ -179,7 +179,7 @@
 - name: SHELL ; use Rscript to install vscDegugger
   become: true
   shell: R -e "remotes::install_github('ManuelHentschel/vscDebugger')"
-  when: "{{ install_r_packages }}"
+  when: INSTALL_R_PACKAGES | bool
 
 - name: LINEINFILE ; ensure suppressMessages in /usr/lib/R/etc/Rprofile.site
   ansible.builtin.lineinfile:
