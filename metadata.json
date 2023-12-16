@@ -96,7 +96,6 @@
       "name": "install_r_packages",
       "type": "bool",
       "description": "Install R packages? Disable if deployment errors.",
-      "enum": ["true", "false"],
       "default": true
     },
     {
