@@ -19,6 +19,12 @@
   args:
     executable: /bin/bash
 
+- name: SHELL ; update conda & anaconda
+  shell:
+    cmd: ~/anaconda3/bin/conda update --all
+  args:
+    executable: /bin/bash
+
 - name: SHELL ; run conda activate and install nb_conda_kernels
   shell:
     cmd: ~/anaconda3/bin/conda install -n base nb_conda_kernels --yes
