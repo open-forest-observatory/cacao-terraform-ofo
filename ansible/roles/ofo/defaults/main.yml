@@ -3,8 +3,8 @@ SHARE_DIR: /ofo-share
 CEPH_DIR: /etc/ceph
 METASHAPE_LICENSE_SERVER_IP: the_license_was_not_set_successfully
 LIBSSL_DEB: libssl1.1_1.1.0g-2ubuntu4_amd64.deb
-ANACONDA3_VERSION: Anaconda3-2022.10-Linux-x86_64
-METASHAPE_PRO_URL: https://s3-eu-west-1.amazonaws.com/download.agisoft.com/metashape-pro_2_0_2_amd64.tar.gz
+ANACONDA3_VERSION: Anaconda3-2023.09-0-Linux-x86_64
+METASHAPE_PRO_URL: https://s3-eu-west-1.amazonaws.com/download.agisoft.com/metashape-pro_2_0_4_amd64.tar.gz
 METASHAPE_PRO_ICON_URL: https://yt3.ggpht.com/ytc/AMLnZu_dMjWqf8JdyAiiVaYhv5DdGECBlHd9MnSv9uQQtw=s176-c-k-c0x00ffffff-no-rj
-METASHAPE_PRO_WHL_MODULE: https://s3-eu-west-1.amazonaws.com/download.agisoft.com/Metashape-2.0.2-cp37.cp38.cp39.cp310.cp311-abi3-linux_x86_64.whl
+METASHAPE_PRO_WHL_MODULE: https://s3-eu-west-1.amazonaws.com/download.agisoft.com/Metashape-2.0.4-cp37.cp38.cp39.cp310.cp311-abi3-linux_x86_64.whl
 RSTUDIO_SERVER_DOWNLOAD_URL: https://download2.rstudio.org/server/jammy/amd64/rstudio-server-2023.09.1-494-amd64.deb
