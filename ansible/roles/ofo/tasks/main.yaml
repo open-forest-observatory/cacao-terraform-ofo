@@ -13,3 +13,8 @@
 - include_tasks: sublime.yaml
 - include_tasks: jupyter.yaml
 - include_tasks: ssl.yaml
+- name: LINEINFILE ; ensure alias ls='ls --color=auto' in .bashrc
+  ansible.builtin.lineinfile:
+    path: ~/.bashrc
+    line: "alias ls='ls --color=auto'"
+    
