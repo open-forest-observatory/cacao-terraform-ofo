@@ -87,12 +87,6 @@
       "description": "cloud init script"
     },
     {
-      "name": "manila_share_key",
-      "type": "string",
-      "description": "key required to access manila share",
-      "default": ""
-    },
-    {
       "name": "install_r_packages",
       "type": "bool",
       "description": "Install R packages? Disable if deployment errors.",

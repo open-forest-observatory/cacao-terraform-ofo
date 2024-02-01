@@ -33,10 +33,6 @@
             "ui_label": "Flavor"
           },
           {
-            "name": "manila_share_key",
-            "ui_label": "Manila share key, leave blank if none"
-          },
-          {
             "name": "metashape_license_server_ip",
             "ui_label": "Metashape license server IP address"
           },
