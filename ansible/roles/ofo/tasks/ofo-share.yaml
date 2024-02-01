@@ -6,24 +6,11 @@
     state: directory
     mode: '0750'
 
-- name: TEMPLATE ; template the keyring
-  become: true
-  template:
-    src: "keyring.j2"
-    dest: "{{ CEPH_DIR }}/ceph.client.ofo-share-01.keyring"
-    mode: 0600
-
-# - name: LINEINFILE ; ensure entry in fstab
-#   become: true
-#   ansible.builtin.lineinfile:
-#     path: /etc/fstab
-#     line: '149.165.158.38:6789,149.165.158.22:6789,149.165.158.54:6789,149.165.158.70:6789,149.165.158.86:6789:/volumes/_nogroup/17faf14d-811c-4a0a-8c07-28ac9bb92df0/f562cd65-396f-400c-a58f-d8a21cd51024 /ofo-share ceph name=ofo-share-01,x-systemd.device-timeout=30,x-systemd.mount-timeout=30,noatime,_netdev,rw 0 2'
-#
 - name: MOUNT ; mount the manila share
   become: true
   mount:
-    src: 149.165.158.38:6789,149.165.158.22:6789,149.165.158.54:6789,149.165.158.70:6789,149.165.158.86:6789:/volumes/_nogroup/17faf14d-811c-4a0a-8c07-28ac9bb92df0/f562cd65-396f-400c-a58f-d8a21cd51024
-    fstype: ceph
-    opts: name=ofo-share-01,x-systemd.device-timeout=30,x-systemd.mount-timeout=30,noatime,_netdev,rw
+    src: 10.0.205.254:/ofo-share-srv
+    fstype: nfs
+    opts: rsize=8192,wsize=8192,timeo=14
     path: "{{ SHARE_DIR }}"
     state: mounted
