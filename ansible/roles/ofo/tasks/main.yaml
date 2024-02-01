@@ -2,7 +2,6 @@
 # https://raw.githubusercontent.com/open-forest-observatory/environments/main/jetstream/jetstream-vm-setup.sh
 - include_tasks: git_config.yaml
 - include_tasks: ofo-share.yaml
-  when: SHARE_KEY is defined and (SHARE_KEY != "" or SHARE_KEY != None)
 - include_tasks: irods.yaml
 - include_tasks: ssh_timeout.yaml
 - include_tasks: qgis.yaml
