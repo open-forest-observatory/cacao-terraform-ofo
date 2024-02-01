@@ -1,0 +1,16 @@
+---
+- name: FILE ; ensure the share directory exists
+  become: true
+  file:
+    path: "{{ SHARE_DIR }}"
+    state: directory
+    mode: '0750'
+
+- name: MOUNT ; mount the manila share
+  become: true
+  mount:
+    src: 10.0.205.254:/ofo-share-srv
+    fstype: nfs
+    opts: rsize=8192,wsize=8192,timeo=14
+    path: "{{ SHARE_DIR }}"
+    state: mounted
