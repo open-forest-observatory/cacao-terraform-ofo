@@ -18,10 +18,10 @@
   retries: 30
   delay: 10
 
-- name: MOUNT ; mount the manila share
+- name: MOUNT ; mount the nfs share
   become: true
   mount:
-    src: 10.0.205.254:/ofo-share-srv
+    src: 10.0.205.254:/ofo-share-serve
     fstype: nfs
     opts: timeo=14
     path: "{{ SHARE_DIR }}"
