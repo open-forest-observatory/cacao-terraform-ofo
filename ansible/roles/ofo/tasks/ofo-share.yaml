@@ -14,3 +14,4 @@
     opts: rsize=8192,wsize=8192,timeo=14
     path: "{{ SHARE_DIR }}"
     state: mounted
+    
