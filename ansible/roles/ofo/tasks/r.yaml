@@ -199,12 +199,3 @@
     src: "/home/{{ ansible_user_id }}/.local/bin/radian"
     path: /opt/radian
     state: link
-
-# temporary fix because prompt-toolkit > 3.0.39 breaks httpgd via radian and no plots show
-# can remove once fixed in package. https://github.com/randy3k/radian/issues/446
-- name: PIP ; force reinstall to lower version...temporary until fixed in this package
-  become: false
-  pip:
-    name: prompt-toolkit
-    state: forcereinstall
-    version: 3.0.39
