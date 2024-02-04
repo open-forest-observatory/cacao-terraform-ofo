@@ -42,9 +42,9 @@
     path: ~/.profile
     line: 'export AGISOFT_FLS={{ METASHAPE_LICENSE_SERVER_IP }}:5842'
 
-- name: SHELL ; run conda activate and pip for meta20
+- name: SHELL ; run conda activate and pip for meta envt
   shell:
-    cmd: "~/anaconda3/bin/conda run -n meta20 pip install {{ METASHAPE_PRO_WHL_MODULE }}"
+    cmd: "~/anaconda3/bin/conda run -n meta pip install {{ METASHAPE_PRO_WHL_MODULE }}"
   args:
     executable: /bin/bash
     
