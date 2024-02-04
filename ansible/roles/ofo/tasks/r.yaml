@@ -123,11 +123,13 @@
       -  r-cran-jsonlite
       -  r-cran-knitr
       -  r-cran-languageserver
+      -  r-cran-leaflet
       -  r-cran-lidr
       -  r-cran-lintr
       -  r-cran-lme4
       -  r-cran-loo
       -  r-cran-lubridate
+      -  r-cran-magick
       -  r-cran-maptools
       -  r-cran-mgcv
       -  r-cran-mgcviz
