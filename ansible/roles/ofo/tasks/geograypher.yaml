@@ -1,0 +1,13 @@
+# Install some dependencies
+- name: APT ; install libgl1-mesa-glx and xvfb
+  become: true
+  apt:
+    pkg:
+      - libgl1-mesa-glx
+      - xvfb
+    state: present
+    update_cache: yes
+  register: apt_result
+  until: apt_result is not failed
+  retries: 30
+  delay: 10

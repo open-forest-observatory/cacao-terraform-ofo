@@ -34,3 +34,14 @@
 - name: SHELL ; run conda create --name meta python=3.11 PyYaml ipykernel
   shell:
     cmd: ~/anaconda3/bin/conda create --name meta python=3.11 PyYaml ipykernel --yes
+
+# Configure conda to use the user's envs and pkgs directory (so that others the user adds later will
+# be searched secondarily). This is setup is required for Geograypher.
+
+- name: SHELL ; run conda config --append envs_dirs ~/anaconda3/envs
+  shell:
+    cmd: ~/anaconda3/bin/conda config --append envs_dirs ~/anaconda3/envs
+    
+- name: SHELL ; run conda config --append pkgs_dirs ~/anaconda3/pkgs
+  shell:
+    cmd: ~/anaconda3/bin/conda config --append envs_dirs ~/anaconda3/pkgs
