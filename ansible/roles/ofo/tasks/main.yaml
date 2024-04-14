@@ -22,4 +22,4 @@
 - name: LINEINFILE ; set up GPG as needed for YADM (https://mroldan.medium.com/gpg-symmetric-encryption-of-stdin-failed-operation-cancelled-f6c1bd90be9d)
   ansible.builtin.lineinfile:
     path: ~/.profile
-    line: 'export export GPG_TTY=$(tty)'
+    line: 'export GPG_TTY=$(tty)'
