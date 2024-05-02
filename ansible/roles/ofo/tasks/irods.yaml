@@ -14,12 +14,14 @@
   ansible.builtin.apt_key:
     url: https://packages.irods.org/irods-signing-key.asc
     state: present
+  ignore_errors: true
 
 - name: APT_REPOSITORY | add the irods repo
   become: true
   ansible.builtin.apt_repository:
     repo: "deb [arch=amd64] https://packages.irods.org/apt/ focal main"
     state: present
+  ignore_errors: true
 
 - name: APT ; install irods-icommands
   become: true
@@ -29,5 +31,6 @@
     update_cache: yes
   register: apt_result
   until: apt_result is not failed
-  retries: 30
+  retries: 10
   delay: 10
+  ignore_errors: true
