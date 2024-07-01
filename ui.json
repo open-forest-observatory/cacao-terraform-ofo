@@ -33,19 +33,16 @@
             "ui_label": "Flavor"
           },
           {
-            "name": "ansible_metashape_license_server_ip",
+            "name": "metashape_license_server_ip",
             "ui_label": "Metashape license server IP address"
           },
           {
-            "name": "ansible_install_r_packages",
+            "name": "install_r_packages",
             "ui_label": "Install R packages"
           },
           {
             "name": "do_ansible_execution",
             "ui_label": "Install OFO dev tools"
-          },
-          {
-            "name": "ansible"
           },
           {
             "type": "advanced_settings",
