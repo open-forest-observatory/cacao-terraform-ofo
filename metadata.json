@@ -50,7 +50,7 @@
       "name": "image_name",
       "type": "cacao_provider_image_name",
       "description": "Boot image name",
-      "default": ""
+      "default": "Featured-Ubuntu22"
     },
     {
       "name": "instance_count",
@@ -62,7 +62,8 @@
     {
       "name": "flavor",
       "type": "cacao_provider_flavor",
-      "description": "Instance type"
+      "description": "Instance type",
+      "editable": true
     },
     {
       "name": "project",
@@ -90,18 +91,21 @@
       "name": "do_ansible_execution",
       "type": "bool",
       "description": "Configure the VM with OFO dev tools on startup? Disable for shelving/unshelving/resizing after initial deployment.",
-      "default": true
+      "default": true,
+      "editable": true
     },
     {
       "name": "install_r_packages",
       "type": "bool",
       "description": "Install R packages? Disable if deployment errors.",
-      "default": true
+      "default": true,
+      "editable": true
     },
     {
       "name": "metashape_license_server_ip",
       "type": "string",
-      "description": "IP address of Metashape license server"
+      "description": "IP address of Metashape license server",
+      "editable": true
     },
     {
       "name": "root_storage_source",
