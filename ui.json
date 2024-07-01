@@ -45,8 +45,7 @@
             "ui_label": "Install OFO dev tools"
           },
           {
-            "name": "ansible",
-            "ui_label": "Ansible collapse test"
+            "name": "ansible"
           },
           {
             "type": "advanced_settings",

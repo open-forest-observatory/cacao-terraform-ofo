@@ -97,7 +97,7 @@
       "type": "bool",
       "description": "Install R packages? Disable if deployment errors.",
       "default": true
-    },    
+    },
     {
       "name": "ansible_metashape_license_server_ip",
       "type": "string",
