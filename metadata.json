@@ -93,6 +93,12 @@
       "default": true
     },
     {
+      "name": "do_ansible_execution",
+      "type": "bool",
+      "description": "Configure the VM with OFO dev tools on startup? Disable for shelving/unshelving/resizing after initial deployment.",
+      "default": true
+    },    
+    {
       "name": "metashape_license_server_ip",
       "type": "string",
       "description": "IP address of Metashape license server"
@@ -107,7 +113,7 @@
     {
       "name": "root_storage_type",
       "type": "string",
-      "default": "local",
+      "default": "volume",
       "enum": ["local", "volume"],
       "description": "type of root storage, either local or volume"
     },
@@ -115,7 +121,7 @@
       "name": "root_storage_size",
       "type": "integer",
       "description": "Size of root storage in GB",
-      "default": -1
+      "default": 80
     },
     {
       "name": "root_storage_delete_on_termination",

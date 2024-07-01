@@ -41,6 +41,10 @@
             "ui_label": "Install R packages"
           },
           {
+            "name": "install_r_packages",
+            "ui_label": "Install OFO dev tools"
+          },
+          {
             "type": "advanced_settings",
             "collapsible": true,
             "title": "Advanced",
