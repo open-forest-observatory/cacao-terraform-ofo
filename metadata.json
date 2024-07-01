@@ -87,19 +87,19 @@
       "description": "cloud init script"
     },
     {
-      "name": "install_r_packages",
-      "type": "bool",
-      "description": "Install R packages? Disable if deployment errors.",
-      "default": true
-    },
-    {
       "name": "do_ansible_execution",
       "type": "bool",
       "description": "Configure the VM with OFO dev tools on startup? Disable for shelving/unshelving/resizing after initial deployment.",
       "default": true
+    },
+    {
+      "name": "ansible_install_r_packages",
+      "type": "bool",
+      "description": "Install R packages? Disable if deployment errors.",
+      "default": true
     },    
     {
-      "name": "metashape_license_server_ip",
+      "name": "ansible_metashape_license_server_ip",
       "type": "string",
       "description": "IP address of Metashape license server"
     },
