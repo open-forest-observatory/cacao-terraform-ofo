@@ -201,3 +201,10 @@
     src: "/home/{{ ansible_user_id }}/.local/bin/radian"
     path: /opt/radian
     state: link
+
+- name: FILE ; set the owner of /usr/local/lib/R/site-library to the ACCESS user, not root
+  become: true
+  file:
+    path: "/usr/local/lib/R/site-library"
+    owner: {{ ansible_user_id }}
+    group: {{ ansible_user_id }}
