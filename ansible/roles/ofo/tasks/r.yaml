@@ -206,5 +206,5 @@
   become: true
   file:
     path: "/usr/local/lib/R/site-library"
-    owner: {{ ansible_user_id }}
-    group: {{ ansible_user_id }}
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_id }}"
