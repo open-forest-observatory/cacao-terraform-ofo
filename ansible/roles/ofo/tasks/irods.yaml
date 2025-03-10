@@ -1,13 +1,13 @@
----
+# ---
 
-- name: APT ; install libssl
-  become: true
-  apt:
-    deb: http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/{{ LIBSSL_DEB }}
-  register: apt_result
-  until: apt_result is not failed
-  retries: 30
-  delay: 10
+#- name: APT ; install libssl
+#  become: true
+#  apt:
+#    deb: http://archive.ubuntu.com/ubuntu/pool/main/o/openssl/{{ LIBSSL_DEB }}
+#  register: apt_result
+#  until: apt_result is not failed
+#  retries: 30
+#  delay: 10
 
 # - name: APT_KEY ; add the irods key
 #   become: true
