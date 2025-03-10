@@ -19,7 +19,17 @@ Cacao homepage https://cyverse.org/cacao
 
 When you deploy a VM through Cacao, you get a Webshell and an interactive Desktop
 
+How should I transfer data on and off Js2 VM? SCP, Rsync? 
+
 CACAO documentation on Jetstream2 https://docs.jetstream-cloud.org/ui/cacao/overview/
+
+NSF ACCESS https://access-ci.org/
+
+To use CACAO and Jetstream2, you need ACCESS credentials. https://operations.access-ci.org/identity/new-user
+
+Who is eligible for ACCESS allocations? https://allocations.access-ci.org/allocations-policy#eligibility
+
+
 
 
 
