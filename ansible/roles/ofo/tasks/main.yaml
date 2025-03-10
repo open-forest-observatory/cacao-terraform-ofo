@@ -1,7 +1,6 @@
 ---
 # https://raw.githubusercontent.com/open-forest-observatory/environments/main/jetstream/jetstream-vm-setup.sh
 - include_tasks: git_config.yaml
-- include_tasks: ofo-share.yaml
 - include_tasks: irods.yaml
 - include_tasks: ssh_timeout.yaml
 - include_tasks: geograypher.yaml
