@@ -29,11 +29,13 @@ More information about CACAO can be found in [in this repo](https://gitlab.com/c
 
 [Login to CACAO](https://cacao.jetstream-cloud.org/) on Jetstream2. You will need your ACCESS credentials to login. 
 
+Please read the [CACAO documentation on Jetstream2](https://docs.jetstream-cloud.org/ui/cacao/overview/). It will guide you through the CACAO user interface, how to set up ssh keys, and how to launch templated instances. 
+
 When you deploy a VM through Cacao, you get a Webshell and an interactive Desktop
 
 How should I transfer data on and off Js2 VM? SCP, Rsync? 
 
-[CACAO documentation on Jetstream2](https://docs.jetstream-cloud.org/ui/cacao/overview/)
+
 
 <br/>
 
