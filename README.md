@@ -6,6 +6,7 @@ This repository holds CACAO formatted Terraform and Ansible template meant to de
 This deployment will launch a user defined VM with the following software installed:
 
 * Agisoft Metashape Desktop GUI & Python Module
+  * `conda activate meta`
 * R and RStudio
 * Anaconda
 * Jupyter notebook
