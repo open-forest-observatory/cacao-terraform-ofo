@@ -41,6 +41,7 @@ The ability to use Js2 is managed through the National Science Foundation's [ACC
 
 * Click _Deploy_
 * Select your cloud and allocation project
+* For the boot image select Featured-Ubuntu22 or Featured-Ubuntu24
 * Give your instance a name and select the flavor of VM
 * Type in the Metashape license server IP address
 
