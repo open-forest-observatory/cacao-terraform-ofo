@@ -5,14 +5,16 @@ This repository holds CACAO formatted Terraform and Ansible template meant to de
 
 This deployment will launch a user defined VM with the following software installed:
 
-* Agisoft Metashape Desktop GUI & Python Module
-  * `conda activate meta`
+* Agisoft Metashape Desktop GUI
+* Agisoft Metashape Python Module
+  * The python library is installed in a conda environment called `meta`. To activate the conda environment type in the CLI `conda activate meta`
+  * Instructions for running the Metashape python script can be found [here](https://github.com/open-forest-observatory/automate-metashape)
 * R and RStudio
 * Anaconda
 * Jupyter notebook
 * QGIS
 * Sublime
-* Geograypher
+
 
 <br/>
 
