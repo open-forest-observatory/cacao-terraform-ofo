@@ -1,7 +1,7 @@
 ## Deploying Open Forest Observatory VMs with CACAO:
 [CACAO(Cloud Automation & Continuous Analysis Orchestration)](https://cyverse.org/cacao) is an orchestration service for researchers and educators that eliminates the complexity of using multiple clouds. It allows user to import templates defined in various templating language(e.g. terraform, ansible, argo workflow) from any git hosting solution (e.g. Github, Gitlab). Once a template has been created, users can deploy VMs with provisioned software with a few clicks to OpenStack Cloud (e.g., Jetstream2) and commercial cloud (e.g., AWS). 
 
-This repository holds CACAO formatted Terraform and Ansible template meant to deploy an Open Forest Observatory development VM to [Jetstream2](https://jetstream-cloud.org/). 
+This repository holds CACAO formatted Terraform and Ansible template meant to deploy an [Open Forest Observatory](https://openforestobservatory.org/) development VM to [Jetstream2](https://jetstream-cloud.org/). 
 
 ## Provisioned Software
 The following software will be installed when you launch an Open Forest Observatory VM. 
