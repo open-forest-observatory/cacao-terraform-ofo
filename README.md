@@ -53,9 +53,9 @@ Once a VM has been launched, transfer your aerial imagery data to the VM for pro
 
 * Note the public ip address of the VM instance
 
-* We recommend using the CLI tool `SCP` to transfer data between your local machine and the VM
+* We recommend using the CLI tool `scp` to transfer data between your local machine and the VM
 
-* From your local machine, go to a terminal and use the `scp` tool to transfer data onto the VM. 
+* On your local machine, go to a terminal and use the `scp` tool to transfer data onto the VM 
 
 `scp -r </my/local/directory> <access-ci_username>@remote_host_publicIP:</remote/directory/>`
 
