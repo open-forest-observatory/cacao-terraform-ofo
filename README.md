@@ -6,16 +6,17 @@ This repository holds CACAO formatted Terraform and Ansible template meant to de
 ## Provisioned Software
 The following software will be installed when you launch an Open Forest Observatory VM. 
 
-* Agisoft Metashape Desktop GUI
-* Agisoft Metashape Python Module
+* Agisoft Metashape Desktop GUI v2.1.2
+* Agisoft Metashape Python Module v2.1.2
   * The python library is installed in a conda environment called `meta`. To activate the conda environment type in the CLI `conda activate meta`
   * Instructions for running the Metashape python script can be found [here](https://github.com/open-forest-observatory/automate-metashape)
-* R and RStudio
-* Anaconda
+* R (v 4.x) and RStudio Server (v 2023.12.1)
+  * Users can access Rstudio from their local web browser at `https://<public_ip_address>:8787`
+* Anaconda (2023.09-0)
 * Jupyter notebook
-* QGIS
+* QGIS (latest stable)
 * Sublime
-* If launching a GPU VM, GPU drivers and cuda will be installed an ready for use
+* If launching a GPU VM, GPU drivers and cuda will be installed and ready for use
 
 
 <br/>
