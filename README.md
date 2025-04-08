@@ -1,9 +1,10 @@
-## about:
+## Deploying Open Forest Observatory VMs with CACAO:
 [CACAO(Cloud Automation & Continuous Analysis Orchestration)](https://cyverse.org/cacao) is an orchestration service for researchers and educators that eliminates the complexity of using multiple clouds. It allows user to import templates defined in various templating language(e.g. terraform, ansible, argo workflow) from any git hosting solution (e.g. Github, Gitlab). Once a template has been created, users can deploy VMs with provisioned software with a few clicks to OpenStack Cloud (e.g., Jetstream2) and commercial cloud (e.g., AWS). 
 
-This repository holds CACAO formatted Terraform and Ansible template meant to deploy an Open Forest Observatory development VM to [Jetstream2](https://jetstream-cloud.org/)
+This repository holds CACAO formatted Terraform and Ansible template meant to deploy an Open Forest Observatory development VM to [Jetstream2](https://jetstream-cloud.org/). 
 
-This deployment will launch a user defined VM with the following software installed:
+## Provisioned Software
+The following software will be installed when you launch an Open Forest Observatory VM. 
 
 * Agisoft Metashape Desktop GUI
 * Agisoft Metashape Python Module
@@ -14,6 +15,7 @@ This deployment will launch a user defined VM with the following software instal
 * Jupyter notebook
 * QGIS
 * Sublime
+* If launching a GPU VM, GPU drivers and cuda will be installed an ready for use
 
 
 <br/>
@@ -24,29 +26,40 @@ CACAO was built as an interface for [Jetstream2](https://jetstream-cloud.org/), 
 
 The ability to use Js2 is managed through the National Science Foundation's [ACCESS](https://access-ci.org/) program. Use of ACCESS computing resources is primarily intended to be used for non-commercial research activitiy, but many types of potential users (including non-profit and commercial) may be able to get an allocation. Please check the resources [here](https://allocations.access-ci.org/allocations-policy#eligibility) for eligibility to use ACCESS computing resources. To start the process of getting a user account go [here](https://operations.access-ci.org/identity/new-user)
 
-More information about CACAO can be found in [in this repo](https://gitlab.com/cyverse/cacao)
+<br/>
+
+## Deployment Instructions
+
+* [Login to CACAO](https://cacao.jetstream-cloud.org/) on Jetstream2. You will need your ACCESS credentials to login. 
+
+* [Add public ssh keys to CACAO](https://docs.jetstream-cloud.org/ui/cacao/credentials/)
+
+* Go to the _Templates_ tab and select the _Open Forest Observatory_ template
+
+* Click _Deploy_
+* Select your cloud and allocation project
+* Give your instance a name and select the flavor of VM
+* Type in the Metashape license server IP address
+
+
+More information can be found on the [CACAO documentation on Jetstream2](https://docs.jetstream-cloud.org/ui/cacao/overview/). 
+
 
 <br/>
 
-## Using CACAO to Deploy Provisioned VMs
 
-[Login to CACAO](https://cacao.jetstream-cloud.org/) on Jetstream2. You will need your ACCESS credentials to login. 
+### Transfer data from local machine to VM
+Once a VM has been launched, transfer your aerial imagery data to the VM for processing. Your ssh keys need to be setup already. 
 
-Please read the [CACAO documentation on Jetstream2](https://docs.jetstream-cloud.org/ui/cacao/overview/). It will guide you through the CACAO user interface, how to set up ssh keys, and how to launch templated instances. 
+* Note the public ip address of the VM instance
 
-<br/>
+* We recommend using the CLI tool `SCP` to transfer data between your local machine and the VM
 
-## Transfer Data between local machine and VM
-
-### Transfer data from local to VM
-
-* After a VM has been launched in CACAO, note the public ip address of the instance.
-
-* From your local machine, go to a terminal use the `scp` tool to transfer data onto the VM. You will need to have your computer [public ssh keys uploaded to CACAO](https://docs.jetstream-cloud.org/ui/cacao/credentials/) before hand. 
+* From your local machine, go to a terminal and use the `scp` tool to transfer data onto the VM. 
 
 `scp -r </my/local/directory> <access-ci_username>@remote_host_publicIP:</remote/directory/>`
 
-### Transfer data VM back to local
+### Transfer data from VM back to local machine
 
 `scp -r <access-ci_usernam>e@remote_host_publicIP:</remote/directory> </my/local/directory>`
 
