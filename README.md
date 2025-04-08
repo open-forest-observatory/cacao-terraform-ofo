@@ -47,7 +47,7 @@ More information can be found on the [CACAO documentation on Jetstream2](https:/
 
 <br/>
 
-
+## Transfer Data
 ### Transfer data from local machine to VM
 Once a VM has been launched, transfer your aerial imagery data to the VM for processing. Your ssh keys need to be setup already. 
 
