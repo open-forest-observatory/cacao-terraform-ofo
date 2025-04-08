@@ -10,9 +10,11 @@ The following software will be installed when you launch an Open Forest Observat
 * Agisoft Metashape Python Module v2.1.2
   * The python library is installed in a conda environment called `meta`. To activate the conda environment type in the CLI `conda activate meta`
   * Instructions for running the Metashape python script can be found [here](https://github.com/open-forest-observatory/automate-metashape)
-* R (v 4.x) and RStudio Server (v 2023.12.1)
-  * Users can access Rstudio from their local web browser at `https://<public_ip_address>:8787`
-* Anaconda (2023.09-0)
+* R (v 4.x), Rstudio Desktop, and RStudio Server (v 2023.12.1)
+  * Users can access Rstudio from their local web browser at `http://<public_ip_address>:8787`
+  * `useradd rstudio`
+  * `passwd rstudio`
+* Anaconda3 (2023.09-0)
 * Jupyter notebook
 * QGIS (latest stable)
 * Sublime
