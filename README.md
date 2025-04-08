@@ -42,11 +42,11 @@ Please read the [CACAO documentation on Jetstream2](https://docs.jetstream-cloud
 
 * From your local machine, go to a terminal use the `scp` tool to transfer data onto the VM. You will need to have your computer [public ssh keys uploaded to CACAO](https://docs.jetstream-cloud.org/ui/cacao/credentials/) before hand. 
 
-`scp -r /my/local/directory access-ci_username@remote_host_publicIP:/remote/directory/`
+`scp -r </my/local/directory> <access-ci_username>@remote_host_publicIP:</remote/directory/>`
 
 ### Transfer data VM back to local
 
-`scp -r access-ci_username@remote_host_publicIP:/remote/directory /my/local/directory`
+`scp -r <access-ci_usernam>e@remote_host_publicIP:</remote/directory> </my/local/directory>`
 
 
 
