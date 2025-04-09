@@ -3,6 +3,8 @@
 
 This repository holds CACAO formatted Terraform and Ansible template meant to deploy an [Open Forest Observatory](https://openforestobservatory.org/) development VM to [Jetstream2](https://jetstream-cloud.org/). 
 
+<br>
+
 ## Provisioned Software
 The following software will be installed when you launch an Open Forest Observatory VM. 
 
@@ -38,6 +40,11 @@ The ability to use Js2 is managed through the National Science Foundation's [ACC
 * Go to the _Templates_ tab and select the _Open Forest Observatory_ template
 
 * Click _Deploy_
+<a href="">
+  <img src="images/deploy.png" alt="Logo" width="200">
+</a>
+
+
 * Select your cloud and allocation project
 * For the boot image select Featured-Ubuntu22 or Featured-Ubuntu24
 * Give your instance a name and select the flavor of VM
