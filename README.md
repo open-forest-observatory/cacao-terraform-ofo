@@ -77,9 +77,9 @@ Once a VM has been launched, transfer your aerial imagery data to the VM for pro
 
 <br/>
 
-## Editing this Repository
+## Editing Ansible in this Repository (permission required)
 
-Edit the software stack https://github.com/open-forest-observatory/cacao-terraform-ofo/tree/main/ansible/roles/ofo/tasks
+You can edit the software stack https://github.com/open-forest-observatory/cacao-terraform-ofo/tree/main/ansible/roles/ofo/tasks
 
 The `main.yaml` controls all the software, and there is a yaml for each individual software. 
 
