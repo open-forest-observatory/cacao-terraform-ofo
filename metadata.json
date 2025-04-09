@@ -1,6 +1,6 @@
 {
   "schema_url": "https://gitlab.com/cyverse/cacao-common/-/raw/master/template/metadata-schemas/v3/schema.json",
-  "name": "single image openstack instances",
+  "name": "Open Forest Observatory",
   "author": "Jeremy Frady, Derek Young, Jeff Gillan",
   "author_email": "jeremyfrady@cyverse.org, djyoung@ucdavis.edu",
   "description": "Deploy a Jetstream2 VM from Open Forest Observatory loaded with Aerial Imagery processing tools. Installed software includes: Agisoft Metashape Desktop & Python Module; RStudio; QGIS; Anaconda3; and Jupyter Notebooks.",
