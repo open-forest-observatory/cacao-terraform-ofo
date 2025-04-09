@@ -41,14 +41,14 @@ The ability to use Js2 is managed through the National Science Foundation's [ACC
 
 * Click _Deploy_
 <a href="">
-  <img src="images/deploy.png" alt="Logo" width="200">
+  <img src="images/deploy.png" alt="Logo" width="100">
 </a>
 
-
-* Select your cloud and allocation project
-* For the boot image select Featured-Ubuntu22 or Featured-Ubuntu24
-* Give your instance a name and select the flavor of VM
-* Type in the Metashape license server IP address
+* Select your cloud (Jetstream2) and allocation project
+* For the boot image select _Featured-Ubuntu22_ or _Featured-Ubuntu24_
+* Give your instance a name and select the flavor of VM. We recommend a GPU instance for faster processing in Metashape. 
+* Metashape is proprietary software that requires a license to run. If you have a license server, please add it's IP address.
+* In _Advanced_ settings, you can customize the size of your storage volume.
 
 
 More information can be found on the [CACAO documentation on Jetstream2](https://docs.jetstream-cloud.org/ui/cacao/overview/). 
