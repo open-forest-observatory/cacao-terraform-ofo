@@ -84,5 +84,5 @@ You can edit the software stack https://github.com/open-forest-observatory/cacao
 The `main.yaml` controls all the software, and there is a yaml for each individual software. 
 
 <br/>
-
+Editing of the template description can be done in the `metadata.json` file. 
 
