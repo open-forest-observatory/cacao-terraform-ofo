@@ -50,6 +50,7 @@ The ability to use Js2 is managed through the National Science Foundation's [ACC
 * Metashape is proprietary software that requires a license to run. If you have a license server, please add it's IP address.
 * In _Advanced_ settings, you can customize the size of your storage volume.
 
+<br/>
 
 More information can be found on the [CACAO documentation on Jetstream2](https://docs.jetstream-cloud.org/ui/cacao/overview/). 
 
@@ -84,6 +85,4 @@ The `main.yaml` controls all the software, and there is a yaml for each individu
 
 <br/>
 
-## requirements:
-- Ubuntu
-- A boot volume with at least 30G 
+
